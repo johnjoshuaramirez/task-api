@@ -8,8 +8,6 @@ Task is a full-stack task management web application designed to help users orga
 - REST API
 - Form validation
 
-### Tech Stack
-
 ### Frontend
 `Angular` `Angular Material` `SCSS` `TypeScript`
 
