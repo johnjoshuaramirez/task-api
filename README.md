@@ -1,4 +1,4 @@
-*Task* (Full Stack Application)
+**Task** (Full Stack Application)
 You can check the application here: https://task-rszt.onrender.com/
 
 The Task application streamlines employee task assignments and progress tracking within an organization. Designed to support both admin and employee workflows, it provides a secure and efficient way to create, manage, and monitor tasks. The system leverages a robust backend built with Spring Boot and integrates JWT-based authentication for secure access and data is persisted in a relational database.
