@@ -67,6 +67,10 @@ This divides the system into independent feature-based modules, such as:
 
 🖥️ API Endpoints
 
+Prerequisites:
+
+Postman installed (for testing APIs)
+
 Service URL: https://task-api-qe6b.onrender.com
 
 | METHOD | ENDPOINT | HEADERS / PARAMS | REQUEST BODY | FUNCTION |
