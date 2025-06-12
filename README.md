@@ -1,6 +1,6 @@
 # 📘 Task Management API Documentation
 
-| METHOD | ENDPOINT | HEADERS / PARAMS | BODY | FUNCTION |
+| METHOD | ENDPOINT | HEADERS / PARAMS | BODY | FUNCTION     |
 |--------|----------|------------------|------|--------------|
 | POST | /signup | – | `{ "name": "tonystark", "email": "tonystark@gmail.com", "password": "P@ssword" }` | Register a new user |
 | POST | /login | – | `{ "email": "admin@test.com", "password": "admin" }` | Login and receive JWT |
