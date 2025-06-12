@@ -93,6 +93,6 @@ Service URL: https://task-api-qe6b.onrender.com
 
 Future Improvements:
 
-Unit and Integration tests using JUnit, Mockito, Testcontainers
+Unit, E2E, and Integration tests using JUnit, Mockito, Testcontainers
 
-UI: https://github.com/johnjoshuaramirez/task
+See UI: https://github.com/johnjoshuaramirez/task
