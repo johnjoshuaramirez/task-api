@@ -1,3 +1,5 @@
+# Task [Full Stack Application]
+
 | METHOD | ENDPOINT     | REQUEST                  | RESPONSE                 | FUNCTION              |
 |--------|--------------|--------------------------|--------------------------|------------------------|
 |POST|/api/auth/signup|Body JSON `{ "name": "<name>", "email": "<email>", "password": "<password>" }`|`{ "id": <user_id>, "name": "<name>", "email": "<email>", "password": null, "userRole": "EMPLOYEE" }`| Sign Up User|
