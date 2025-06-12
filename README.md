@@ -52,10 +52,10 @@ This divides the system into horizontal layers, each with a specific responsibil
 ### 2. Modular Architecture
 This divides the system into independent feature-based modules, such as:
 
-- auth/ → everything related to login, signup, tokens
+- auth/ → everything related to login, signup
 
-- task/ → everything related to tasks (controller, service, model)
+- admin/ → everything related to admin
 
-- comment/ → everything related to comments
+- employee/ → everything related to employee
 
 
