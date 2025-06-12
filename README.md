@@ -1,71 +1,159 @@
-# API Endpoints Summary
+METHOD
 
----
+ENDPOINT
 
-## 🔐 Auth Endpoints
+HEADERS / PARAMS
 
-### POST `/api/auth/signup`
-- **Body**: `{ name, email, password }`
-- **Response**: `{ id, name, email, password: null, userRole: EMPLOYEE }`
-- **Purpose**: Sign up a new user
+BODY
 
-### POST `/api/auth/login`
-- **Body**: `{ email, password }`
-- **Response**: `{ jwt, userId, userRole }`
-- **Purpose**: Authenticate user
+FUNCTION
 
----
+POST
 
-## 🛠️ Admin Endpoints
+/api/auth/signup
 
-### GET `/api/admin/users`
-- **Header**: `Authorization: <admin_token>`
-- **Response**: List of all users
-- **Purpose**: View employees
+–
 
-### POST `/api/admin/task`
-- **Header**: `Authorization: <admin_token>`
-- **Body**: `{ employeeId, title, description, dueDate, priority }`
-- **Purpose**: Assign a task
+{ "name": "tonystark", "email": "tonystark@gmail.com", "password": "P@ssword" }
 
-### GET `/api/admin/tasks`
-- **Header**: `Authorization: <admin_token>`
-- **Response**: List of all tasks
+Register a new user
 
-### GET `/api/admin/task/{taskId}`
-- **Header**: `Authorization: <admin_token>`
-- **Purpose**: View single task
+POST
 
-### PUT `/api/admin/task/{taskId}`
-- **Header**: `Authorization: <admin_token>`
-- **Body**: Update task details
-- **Purpose**: Edit a task
+/api/auth/login
 
-### DELETE `/api/admin/task/{taskId}`
-- **Purpose**: Delete a task
+–
 
-### GET `/api/admin/tasks/search?title=...`
-- **Purpose**: Search tasks by title
+{ "email": "admin@test.com", "password": "admin" }
 
-### POST `/api/admin/task/comment/{taskId}?content=...`
-- **Purpose**: Comment on a task
+Login and receive JWT
 
-### GET `/api/admin/comments/{taskId}`
-- **Purpose**: View all comments on a task
+POST
 
----
+/api/admin/task
 
-## 👷 Employee Endpoints
+Authorization: Bearer <admin_token>
 
-### GET `/api/employee/tasks`
-- **Header**: `Authorization: <employee_token>`
-- **Purpose**: View all tasks assigned to the employee
+{ "employeeId": 1, "title": "Task Title", "description": "Task Description", "dueDate": "2025-06-17", "priority": "MEDIUM" }
 
-### GET `/api/employee/task/{taskId}/{taskStatus}`
-- **Purpose**: Update task status
+Assign task to employee
 
-### POST `/api/employee/task/comment/{taskId}?content=...`
-- **Purpose**: Add comment to a task
+GET
 
-### GET `/api/employee/comments/{taskId}`
-- **Purpose**: View task comments
+/api/admin/users
+
+Authorization: Bearer <admin_token>
+
+–
+
+Get all employees
+
+GET
+
+/api/admin/tasks
+
+Authorization: Bearer <admin_token>
+
+–
+
+Get all tasks
+
+GET
+
+/api/admin/task/{taskId}
+
+Authorization: Bearer <admin_token>
+
+–
+
+Get task by ID
+
+PUT
+
+/api/admin/task/{taskId}
+
+Authorization: Bearer <admin_token>
+
+{ "employeeId": 2, "title": "Updated Title", "description": "Updated Description", "dueDate": "2025-06-20", "priority": "HIGH", "taskStatus": "INPROGRESS" }
+
+Update task by ID
+
+DELETE
+
+/api/admin/task/{taskId}
+
+Authorization: Bearer <admin_token>
+
+–
+
+Delete task by ID
+
+GET
+
+/api/admin/tasks/search?title={value}
+
+Authorization: Bearer <admin_token>
+
+–
+
+Search tasks by title
+
+POST
+
+/api/admin/task/comment/{taskId}?content={value}
+
+Authorization: Bearer <admin_token>
+
+–
+
+Add comment to task
+
+GET
+
+/api/admin/comments/{taskId}
+
+Authorization: Bearer <admin_token>
+
+–
+
+Get task comments
+
+GET
+
+/api/employee/tasks
+
+Authorization: Bearer <employee_token>
+
+–
+
+Get current user tasks
+
+GET
+
+/api/employee/task/{taskId}/{taskStatus}
+
+–
+
+–
+
+Update task status by employee
+
+POST
+
+/api/employee/task/comment/{taskId}?content={value}
+
+Authorization: Bearer <employee_token>
+
+–
+
+Add comment by employee
+
+GET
+
+/api/employee/comments/{taskId}
+
+Authorization: Bearer <employee_token>
+
+–
+
+Get employee task comments
