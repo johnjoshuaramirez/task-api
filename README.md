@@ -31,8 +31,11 @@ The TaskManager application streamlines employee task assignments and progress t
 
 ✅ Design & Architecture:
 - Modular layered architecture
+- Separation of concerns via interfaces and service implementations
+- Repository pattern for database interaction
+- DTOs and mappers for clean data transfer
 
-## 1. Layered Architecture
+### 1. Layered Architecture
 This divides the system into horizontal layers, each with a specific responsibility:
 
 - Controller Layer (Presentation): Handles HTTP requests/responses, often using Spring's @RestController.
@@ -45,7 +48,7 @@ This divides the system into horizontal layers, each with a specific responsibil
 
 Each layer only communicates with the layer directly below it, ensuring separation of concerns.
 
-## 2. Modular Architecture
+### 2. Modular Architecture
 - This divides the system into independent feature-based modules, such as:
 
 - auth/ → everything related to login, signup, tokens
@@ -54,8 +57,4 @@ Each layer only communicates with the layer directly below it, ensuring separati
 
 - comment/ → everything related to comments
 
-- Separation of concerns via interfaces and service implementations
 
-- Repository pattern for database interaction
-
-- DTOs and mappers for clean data transfer
