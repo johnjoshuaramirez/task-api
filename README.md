@@ -31,8 +31,11 @@ The TaskManager application streamlines employee task assignments and progress t
 
 ✅ Design & Architecture:
 - Modular layered architecture
+
 - Separation of concerns via interfaces and service implementations
+
 - Repository pattern for database interaction
+
 - DTOs and mappers for clean data transfer
 
 ### 1. Layered Architecture
@@ -45,8 +48,6 @@ This divides the system into horizontal layers, each with a specific responsibil
 - Repository Layer (Persistence): Interacts with the database using interfaces and ORM tools like JPA.
 
 - Model/DTO Layer: Represents the data objects transferred between layers.
-
-Each layer only communicates with the layer directly below it, ensuring separation of concerns.
 
 ### 2. Modular Architecture
 - This divides the system into independent feature-based modules, such as:
