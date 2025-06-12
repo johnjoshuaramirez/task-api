@@ -91,4 +91,8 @@ Service URL: https://task-api-qe6b.onrender.com
 | POST | /employee/task/comment/{id} | Auth: Bearer <employee_token>, ?content={value} | – | Add task comment by employee |
 | GET | /employee/comments/{id} | Auth: Bearer <employee_token> | – | Get employee task comments |
 
+Future Improvements:
+
+Unit and Integration tests using JUnit, Mockito, Testcontainers
+
 UI: https://github.com/johnjoshuaramirez/task
