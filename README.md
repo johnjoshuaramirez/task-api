@@ -1,4 +1,9 @@
-You can check the application here: https://task-rszt.onrender.com/
+**You can check the application here**: https://task-rszt.onrender.com/
+
+**Admin Login**:
+Email: admin@test.com
+Password: admin
+⚠️ Disclaimer: This app uses free hosting services. After periods of inactivity, the database and backend may take 30–50 seconds to wake up. You might experience a short delay before the app becomes responsive.
 
 The Task (API) streamlines employee task assignments and progress tracking within. Designed to support both admin and employee workflows, it provides a secure and efficient way to create, manage, and monitor tasks. The system leverages a robust backend built with Spring Boot and integrates JWT-based authentication for secure access and data is persisted in a relational database.
 
@@ -56,6 +61,10 @@ This divides the system into independent feature-based modules, such as:
 - admin/ → everything related to admin
 
 - employee/ → everything related to employee
+
+🖥️ API Endpoints
+
+Service URL: https://task-api-qe6b.onrender.com
 
 | METHOD | ENDPOINT | HEADERS / PARAMS | REQUEST BODY | FUNCTION |
 | --- | --- | --- | --- | --- |
