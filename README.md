@@ -50,7 +50,7 @@ This divides the system into horizontal layers, each with a specific responsibil
 - Model/DTO Layer: Represents the data objects transferred between layers.
 
 ### 2. Modular Architecture
-- This divides the system into independent feature-based modules, such as:
+This divides the system into independent feature-based modules, such as:
 
 - auth/ → everything related to login, signup, tokens
 
