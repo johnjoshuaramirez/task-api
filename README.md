@@ -1,4 +1,4 @@
-# Task [Full Stack Application]
+# Task App [Full Stack Application]
 
 | METHOD | ENDPOINT     | REQUEST                  | RESPONSE                 | FUNCTION              |
 |--------|--------------|--------------------------|--------------------------|------------------------|
