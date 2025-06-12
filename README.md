@@ -4,33 +4,33 @@ You can check the application here: http://<your-server-domain>/swagger-ui/index
 The TaskManager application streamlines employee task assignments and progress tracking within an organization. Designed to support both admin and employee workflows, it provides a secure and efficient way to create, manage, and monitor tasks. The system leverages a robust backend built with Spring Boot and integrates JWT-based authentication for secure access and data is persisted in a relational database.
 
 🔑 Key Features:
-Admin and Employee roles with JWT-secured authentication
+- Admin and Employee roles with JWT-secured authentication
 
-User registration and login with role assignment
+- User registration and login with role assignment
 
-Task assignment by admins to employees
+- Task assignment by admins to employees
 
-Task filtering, searching, and status updates
+- Task filtering, searching, and status updates
 
-Role-based comment system on tasks
+- Role-based comment system on tasks
 
-Clean and responsive API
+- Clean and responsive API
 
-Secure password handling
+- Secure password handling
 
 📦 Technologies:
-Spring Boot (RESTful Web Services)
+- Spring Boot (RESTful Web Services)
 
-Spring Security + JWT (Authentication & Authorization)
+- Spring Security + JWT (Authentication & Authorization)
 
-MySQL (Relational Database)
+- MySQL (Relational Database)
 
-Lombok, JPA, Hibernate (Productive Java coding)
+- Lombok, JPA, Hibernate (Productive Java coding)
 
-Docker (Containerized Deployment)
+- Docker (Containerized Deployment)
 
 ✅ Design & Architecture:
-Modular layered architecture
+- Modular layered architecture
 
 1. Layered Architecture
 This divides the system into horizontal layers, each with a specific responsibility:
@@ -54,11 +54,7 @@ task/ → everything related to tasks (controller, service, model)
 
 comment/ → everything related to comments
 
-Each module encapsulates its own logic and follows the layered structure inside it.
-
-Separation of concerns via interfaces and service implementations
-
-Facade Design Pattern used for simplifying service access
+- Separation of concerns via interfaces and service implementations
 
 Repository pattern for database interaction
 
