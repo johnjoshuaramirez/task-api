@@ -1,4 +1,4 @@
-**You can check the application here**: https://task-rszt.onrender.com/
+You can check the application here: https://task-rszt.onrender.com/
 
 **Admin Login**:
 Email: admin@test.com
