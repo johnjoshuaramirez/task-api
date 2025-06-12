@@ -1,7 +1,7 @@
 # 📘 Task API Documentation
 
 | METHOD | ENDPOINT | HEADERS / PARAMS | BODY | FUNCTION |
-|--------|----------|------------------|------|----------|
+|--------|-------|------------------|------|----------|
 | POST | /api/auth/signup | – | `{ "name": "tonystark", "email": "tonystark@gmail.com", "password": "P@ssword" }` | Register a new user |
 | POST | /api/auth/login | – | `{ "email": "admin@test.com", "password": "admin" }` | Login and receive JWT |
 | POST | /api/admin/task | Authorization: Bearer <admin_token> | `{ "employeeId": 1, "title": "Task Title", "description": "Task Description", "dueDate": "2025-06-17", "priority": "MEDIUM" }` | Assign task to employee |
