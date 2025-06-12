@@ -1,9 +1,21 @@
-# Task App [Full Stack Application]
+# API Documentation
 
-| METHOD | ENDPOINT     | REQUEST                  | RESPONSE                 | FUNCTION              |
-|--------|--------------|--------------------------|--------------------------|------------------------|
-|POST|/api/auth/signup|{ name, email, password }|User|Sign Up User|
-| POST   | /users       | JSON with user data      | 201 Created, user object | Create a new user      |
-| GET    | /users/{id}  | URL param: user ID       | 200 OK, user object      | Retrieve single user   |
-| PUT    | /users/{id}  | JSON with updated data   | 200 OK, updated user     | Update user by ID      |
-| DELETE | /users/{id}  | URL param: user ID       | 204 No Content           | Delete user by ID      |
+## Task Management API Endpoints
+
+| HTTP METHOD | ENDPOINT | REQUEST | RESPONSE | FUNCTION |
+|-------------|----------|---------|----------|----------|
+| **POST** | `/api/auth/signup` | Body JSON:<br>`{ "name": "tonystark", "email": "tonystark@gmail.com", "password": "P@ssword" }` | `{ "id": <user_id>, "name": "<name>", "email": "<email>", "password": null, "userRole": "EMPLOYEE" }` | Sign Up User |
+| **POST** | `/api/auth/login` | Body JSON:<br>`{ "email": "admin@test.com", "password": "admin" }` | `{ "jwt": "<token>", "userId": <user_id>, "userRole": "<ADMIN\|USER>" }` | Sign In User |
+| **GET** | `/api/admin/users` | Header:<br>`Authorization: <admin_token>` | `[ { "id": <user_id>, "name": "<employee_name>", "password": "<employee_password>", "userRole": "<ADMIN\|EMPLOYEE>" } ]` | Get All Employees |
+| **POST** | `/api/admin/task` | Header:<br>`Authorization: <admin_token>`<br>Body JSON:<br>`{ "employeeId": <employee_id>, "title": "Task Title", "description": "Task Description", "dueDate": "2025-06-17", "priority": "MEDIUM" }` | `{ "id": <task_id>, "title": "<title>", "description": "<description>", "dueDate": "<YYYY-MM-DD>", "priority": "<LOW\|MEDIUM\|HIGH>", "taskStatus": "<PENDING\|INPROGRESS\|COMPLETED\|DEFERRED\|CANCELLED>", "employeeId": <employee_id>, "employeeName": "<employee_name>" }` | Post Single Task |
+| **GET** | `/api/admin/tasks` | Header:<br>`Authorization: <admin_token>` | `[ { "id": <task_id>, "title": "<title>", "description": "<description>", "dueDate": "<YYYY-MM-DD>", "priority": "<LOW\|MEDIUM\|HIGH>", "taskStatus": "<PENDING\|INPROGRESS\|COMPLETED\|DEFERRED\|CANCELLED>" } ]` | Get All Tasks |
+| **DELETE** | `/api/admin/task/{taskId}` | Header:<br>`Authorization: <admin_token>` | – | Delete Single Task |
+| **GET** | `/api/admin/task/{taskId}` | Header:<br>`Authorization: <admin_token>` | `{ "id": <task_id>, "title": "<title>", "description": "<description>", "dueDate": "<YYYY-MM-DD>", "priority": "<LOW\|MEDIUM\|HIGH>", "taskStatus": "<PENDING\|INPROGRESS\|COMPLETED\|DEFERRED\|CANCELLED>" }` | Get Single Task |
+| **PUT** | `/api/admin/task/{taskId}` | Header:<br>`Authorization: <admin_token>`<br>Body JSON:<br>`{ "employeeId": <employee_id>, "title": "<title>", "description": "<description>", "dueDate": "<YYYY-MM-DD>", "priority": "<LOW\|MEDIUM\|HIGH>", "taskStatus": "<PENDING\|INPROGRESS\|COMPLETED\|DEFERRED\|CANCELLED>" }` | `{ "id": <task_id>, "title": "<title>", "description": "<description>", "dueDate": "<YYYY-MM-DD>", "priority": "<LOW\|MEDIUM\|HIGH>", "taskStatus": "<PENDING\|INPROGRESS\|COMPLETED\|DEFERRED\|CANCELLED>", "employeeId": <employee_id>, "employeeName": "<employee_name>" }` | Update Single Task |
+| **GET** | `/api/admin/tasks/search?title={value}` | Header:<br>`Authorization: <admin_token>` | `[ { "id": <task_id>, "title": "<title>", "description": "<description>", "dueDate": "<YYYY-MM-DD>", "priority": "<LOW\|MEDIUM\|HIGH>", "taskStatus": "<PENDING\|INPROGRESS\|COMPLETED\|DEFERRED\|CANCELLED>" } ]` | Search Tasks |
+| **POST** | `/api/admin/task/comment/{taskId}?content={value}` | Header:<br>`Authorization: <admin_token>` | `[ { "id": 2, "content": "<value>", "createdAt": "<YYYY-MM-DD>", "taskId": <task_id>, "userId": <user_id>, "postedBy": "<admin\|<employee_name>>" } ]` | Post Admin Comment |
+| **GET** | `/api/admin/comments/{taskId}` | – | `[ { "id": <comment_id>, "content": "<comment>", "createdAt": "2025-06-12T07:13:00.936+00:00", "taskId": <task_id>, "userId": <user_id>, "postedBy": "<admin\|<employee_name>>" } ]` | Get All Comments |
+| **GET** | `/api/employee/tasks` | Header:<br>`Authorization: <employee_token>` | `[ { "id": <task_id>, "title": "<title>", "description": "<description>", "dueDate": "<YYYY-MM-DD>", "priority": "<LOW\|MEDIUM\|HIGH>", "taskStatus": "<PENDING\|INPROGRESS\|COMPLETED\|DEFERRED\|CANCELLED>" } ]` | Get All Current User Tasks |
+| **GET** | `/api/employee/task/{taskId}/{taskStatus}` | Query Param:<br>`?taskStatus={taskStatus}` | `{ "id": <task_id>, "title": "<title>", "description": "<description>", "dueDate": "<YYYY-MM-DD>", "priority": "<LOW\|MEDIUM\|HIGH>", "taskStatus": "<PENDING\|INPROGRESS\|COMPLETED\|DEFERRED\|CANCELLED>", "employeeId": <employee_id>, "employeeName": "<employee_name>" }` | Update Current User Task Status |
+| **POST** | `/api/employee/task/comment/{taskId}?content={value}` | Header:<br>`Authorization: <employee_token>` | `{ "id": <comment_id>, "content": "<value>", "createdAt": "<YYYY-MM-DD>", "taskId": 4, "userId": null, "postedBy": "wandawillow" }` | Post Employee Comment |
+| **GET** | `/api/employee/comments/{taskId}` | Header:<br>`Authorization: <employee_token>` | `[ { "id": <user_id>, "content": "willow", "createdAt": "2025-06-12T07:13:00.936+00:00", "taskId": 4, "userId": null, "postedBy": "admin" } ]` | Get All Current User Task Comments |
