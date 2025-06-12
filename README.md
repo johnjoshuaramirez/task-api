@@ -1,19 +1,19 @@
-# 📘 Task API Documentation
+# 📘 Task Management API Documentation
 
 | METHOD | ENDPOINT | HEADERS / PARAMS | BODY | FUNCTION |
-|--------|----|------------------|------|----------|
-| POST | /api/auth/signup | – | `{ "name": "tonystark", "email": "tonystark@gmail.com", "password": "P@ssword" }` | Register a new user |
-| POST | /api/auth/login | – | `{ "email": "admin@test.com", "password": "admin" }` | Login and receive JWT |
-| POST | /api/admin/task | Authorization: Bearer <admin_token> | `{ "employeeId": 1, "title": "Task Title", "description": "Task Description", "dueDate": "2025-06-17", "priority": "MEDIUM" }` | Assign task to employee |
-| GET | /api/admin/users | Authorization: Bearer <admin_token> | – | Get all employees |
-| GET | /api/admin/tasks | Authorization: Bearer <admin_token> | – | Get all tasks |
-| GET | /api/admin/task/{taskId} | Authorization: Bearer <admin_token> | – | Get task by ID |
-| PUT | /api/admin/task/{taskId} | Authorization: Bearer <admin_token> | `{ "employeeId": 2, "title": "Updated Title", "description": "Updated Description", "dueDate": "2025-06-20", "priority": "HIGH", "taskStatus": "INPROGRESS" }` | Update task by ID |
-| DELETE | /api/admin/task/{taskId} | Authorization: Bearer <admin_token> | – | Delete task by ID |
-| GET | /api/admin/tasks/search?title={value} | Authorization: Bearer <admin_token> | – | Search tasks by title |
-| POST | /api/admin/task/comment/{taskId}?content={value} | Authorization: Bearer <admin_token> | – | Add comment to task |
-| GET | /api/admin/comments/{taskId} | Authorization: Bearer <admin_token> | – | Get task comments |
-| GET | /api/employee/tasks | Authorization: Bearer <employee_token> | – | Get current user tasks |
-| GET | /api/employee/task/{taskId}/{taskStatus} | – | – | Update task status by employee |
-| POST | /api/employee/task/comment/{taskId}?content={value} | Authorization: Bearer <employee_token> | – | Add comment by employee |
-| GET | /api/employee/comments/{taskId} | Authorization: Bearer <employee_token> | – | Get employee task comments |
+|--------|----------|------------------|------|----------|
+| POST | /signup | – | `{ "name": "tonystark", "email": "tonystark@gmail.com", "password": "P@ssword" }` | Register a new user |
+| POST | /login | – | `{ "email": "admin@test.com", "password": "admin" }` | Login and receive JWT |
+| POST | /admin/task | Auth: Bearer <admin_token> | `{ "employeeId": 1, "title": "Task Title", "description": "Task Description", "dueDate": "2025-06-17", "priority": "MEDIUM" }` | Assign task to employee |
+| GET | /admin/users | Auth: Bearer <admin_token> | – | Get all employees |
+| GET | /admin/tasks | Auth: Bearer <admin_token> | – | Get all tasks |
+| GET | /admin/task/{id} | Auth: Bearer <admin_token> | – | Get task by ID |
+| PUT | /admin/task/{id} | Auth: Bearer <admin_token> | `{ "employeeId": 2, "title": "Updated Title", "description": "Updated Description", "dueDate": "2025-06-20", "priority": "HIGH", "taskStatus": "INPROGRESS" }` | Update task by ID |
+| DELETE | /admin/task/{id} | Auth: Bearer <admin_token> | – | Delete task by ID |
+| GET | /admin/tasks/search | Auth: Bearer <admin_token>, ?title={value} | – | Search tasks by title |
+| POST | /admin/task/comment/{id} | Auth: Bearer <admin_token>, ?content={value} | – | Add comment to task |
+| GET | /admin/comments/{id} | Auth: Bearer <admin_token> | – | Get task comments |
+| GET | /employee/tasks | Auth: Bearer <employee_token> | – | Get current user tasks |
+| GET | /employee/task/{id}/{status} | – | – | Update task status by employee |
+| POST | /employee/task/comment/{id} | Auth: Bearer <employee_token>, ?content={value} | – | Add comment by employee |
+| GET | /employee/comments/{id} | Auth: Bearer <employee_token> | – | Get employee task comments |
