@@ -95,4 +95,4 @@ Future Improvements:
 
 Unit, E2E, and Integration tests using JUnit, Mockito, Testcontainers
 
-See UI: https://github.com/johnjoshuaramirez/task
+UI: https://github.com/johnjoshuaramirez/task
